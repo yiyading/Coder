@@ -3,7 +3,7 @@
 - [进程如何使用内存](#进程如何使用内存)
 - [物理内存](#物理内存)
 - [虚拟内存](#虚拟内存)
-- [Linux I/O](#Linux I/O)
+- [I/O](#I/O)
 
 ## 进程如何使用内存
 
@@ -128,31 +128,3 @@ page table由页表项构成，页表项中包含页框（page frame）号、修
 ![MMU映射](img/MMU映射.png)
 
 如果要换出页面的页表项的修改位被设置过，则换出这个脏页到磁盘进行更新；如果没有被设置，则直接换入新的页面进行覆盖替换。
-
-## Linux I/O
-
-### I/O缓存
-
-![用户数据传输到disk](img/用户数据传输到disk.png)
-
-linux中用户数据传送到磁盘的过程如上图。
-
-read()/wirte()是基本的I/O读写系统调用，在这两个系统调用和真实的磁盘读写之间存在一个Kernel buffer cache（内核缓冲区缓存）；Kernel buffer cache是为了加快读/写。
-
-Kernel buffer cache由Page Cache和Buffer Cache组成。
-
-1. 读磁盘：内核查看Page Cache中是否已经缓存这个数据
-> 存在则直接读；不存在则穿透到磁盘中读取，并将数据缓存在Page buffer
-
-2. 写磁盘：内核把数据写入Page Cache，将这一页标记为dirty，将其添加入dirty list
-> 定期将dirty list中的页缓存flush到磁盘，保证磁盘和页缓存一致性
-
-Page Cache定期使用页面置换算法（如LRU）淘汰旧页面，且Page Cache是基于虚拟内存的页单元缓存。
-> Kernel -> Kernel Buffer Cache -> Disk
-
-Linux 2.4版本后，Page Cache和Buffer Cache进行了统一。
-
-如下图所示，Buffer Cache内嵌入Page Cache中；处理文件I/O缓存交给Page Ceche，底层RAW Device刷新数据时以Buffer Cache的快单位来实际处理。
-
-![融合Page和Buffer.png](img/融合Page和Buffer.png)
-
