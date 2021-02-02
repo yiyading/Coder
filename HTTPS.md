@@ -13,8 +13,6 @@ http协议三大缺点：明文、不验证身份、报文可能被篡改。因�
 HTTPS不是新的通信协议，而是在HTTP的基础上加上加密处理。如下图所示，HTTP的通信接口由SSL（Secure Socket Layer）或者TLS（Transport Layer Security)协议代替。如果使用SSL，则HTTP先和SSL通信，再由SSL和TCP层通信。
 > TSL基于SSL原型开发的，有时会统一称该协议为SSL。
 
-![HTTP和HTTPS的却别](img/HTTPS1.png)
-
 ## 一、概念普及
 
 0. 加密/解密
