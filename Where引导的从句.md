@@ -6,18 +6,28 @@
 4. 引导状语从句
 5. 引导定语从句
 
-## 引导主语从句
+## 引导名词性从句
 
-1. Where引导的主语从句位于句首
+where引导的名词性从句，意思为the place where，翻译为“...的地方”
 
-Where we stay doesn't matter.
+1. where引导的主语从句位于句首
 
 Where I spend my summer is no bussiness of yours.
+> where引导的名词性从句放在主语的位置，因此这里where引导的是主语从句
 
-Where he has surpassed every other English writer is in his songs.
-
-2. Where引导的主语从句位于句尾，使用形式主语it
+2. where引导的主语从句位于句尾，使用形式主语it
 
 It's not know where she went.
 
-It's doesn't matter where we go on holiday.
+3. where引导的表语从句
+
+This is Where Luxun once lived。
+> where引导的从句，没有先行词非定语从句，从语法功能看是表语位置，where做地点状语
+
+## 引导定语从句
+
+He's got himself into a dangerous situation where he is likely to lose control over ther plane.
+> situation是先行词，其后是where引导的定语从句，修饰situation
+
+This is the place where Luxun once lived.
+> palce是先行词，其后是where引导的定于从句，修饰place
